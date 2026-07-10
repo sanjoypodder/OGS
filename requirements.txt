@@ -1,0 +1,32 @@
+# ===============================
+# OGS Smart Money AI
+# Version : 0.0.1
+# ===============================
+
+PySide6>=6.8.0
+
+pandas>=2.3.0
+
+numpy>=2.3.0
+
+polars>=1.30.0
+
+plotly>=6.0.0
+
+SQLAlchemy>=2.0.40
+
+python-dotenv>=1.1.0
+
+loguru>=0.7.3
+
+pydantic>=2.11.0
+
+websockets>=15.0
+
+requests>=2.32.0
+
+pytest>=8.4.0
+
+black>=25.1.0
+
+ruff>=0.12.0

@@ -1,0 +1,63 @@
+# Python
+
+__pycache__/
+
+*.pyc
+
+*.pyo
+
+*.pyd
+
+*.db
+
+*.sqlite
+
+*.sqlite3
+
+# Virtual Environment
+
+.venv/
+
+venv/
+
+env/
+
+# VS Code
+
+.vscode/settings.json
+
+# Logs
+
+logs/
+
+*.log
+
+# Build
+
+build/
+
+dist/
+
+*.spec
+
+# OS
+
+Thumbs.db
+
+.DS_Store
+
+# Environment
+
+.env
+
+# Cache
+
+.pytest_cache/
+
+.mypy_cache/
+
+.ruff_cache/
+
+# Temporary
+
+*.tmp
