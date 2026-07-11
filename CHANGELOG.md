@@ -61,3 +61,11 @@ Foundation Started
 - Directory validation
 - Write permission validation
 - Virtual environment detection
+
+## [0.1.0-alpha.4]
+
+### Added
+
+- Application lifecycle model
+- Service container
+- Shutdown manager
