@@ -50,3 +50,14 @@ Foundation Started
 ### Improved
 
 - Configuration now uses constants as the single source of truth.
+## [0.1.0-alpha.3]
+
+### Added
+
+- Environment Manager
+- Startup Manager
+- Python version validation
+- Package validation
+- Directory validation
+- Write permission validation
+- Virtual environment detection
