@@ -12,6 +12,7 @@ Author:
 """
 
 from ogs.core.application import Application
+from ogs.core.logger import configure_logger
 
 
 def main() -> None:
@@ -19,11 +20,29 @@ def main() -> None:
     OGS Entry Point.
     """
 
+    configure_logger()
+
     application = Application()
 
-    application.run()
+    try:
 
-    application.shutdown()
+        application.run()
+
+    except KeyboardInterrupt:
+
+        application.shutdown()
+
+    except Exception:
+
+        application.shutdown()
+
+        raise
+
+    finally:
+
+        if application.application_state != "STOPPED":
+
+            application.shutdown()
 
 
 if __name__ == "__main__":
