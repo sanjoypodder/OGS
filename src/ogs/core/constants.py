@@ -1,57 +1,59 @@
 """
 ===========================================================
 
-OGS Smart Money AI
+Module:
+    constants.py
 
-Core Constants
+Purpose:
+    Global constants and project paths.
+
+Author:
+    Om Ganapati Solution
+
+Project:
+    OGS Smart Money AI
 
 ===========================================================
 """
 
 from pathlib import Path
 
-# --------------------------------------------------------
-# Project Information
-# --------------------------------------------------------
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
-APP_NAME = "OGS Smart Money AI"
+SRC_DIR = PROJECT_ROOT / "src"
 
-COMPANY_NAME = "Om Ganapati Solution"
+DOCS_DIR = PROJECT_ROOT / "docs"
 
-CODENAME = "GARUDA"
+LOG_DIR = PROJECT_ROOT / "logs"
 
-VERSION = "0.0.1"
+DATABASE_DIR = PROJECT_ROOT / "database"
 
-# --------------------------------------------------------
-# Directories
-# --------------------------------------------------------
+CONFIG_DIR = PROJECT_ROOT / "config"
 
-ROOT_DIR = Path(__file__).resolve().parents[3]
+TESTS_DIR = PROJECT_ROOT / "tests"
 
-SRC_DIR = ROOT_DIR / "src"
+KNOWLEDGE_DIR = PROJECT_ROOT / "knowledge"
 
-DOCS_DIR = ROOT_DIR / "docs"
+ASSETS_DIR = PROJECT_ROOT / "assets"
 
-LOG_DIR = ROOT_DIR / "logs"
+RELEASES_DIR = PROJECT_ROOT / "releases"
 
-DATABASE_DIR = ROOT_DIR / "database"
+TOOLS_DIR = PROJECT_ROOT / "tools"
 
-ASSETS_DIR = ROOT_DIR / "assets"
-
-CONFIG_DIR = ROOT_DIR / "config"
-
-TESTS_DIR = ROOT_DIR / "tests"
-
-RELEASES_DIR = ROOT_DIR / "releases"
-
-# --------------------------------------------------------
-# Log File
-# --------------------------------------------------------
+SCRIPTS_DIR = PROJECT_ROOT / "scripts"
 
 LOG_FILE = LOG_DIR / "ogs.log"
 
-# --------------------------------------------------------
-# Database
-# --------------------------------------------------------
-
 DATABASE_FILE = DATABASE_DIR / "ogs.db"
+
+DEFAULT_SYMBOL = "XAUUSD"
+
+DEFAULT_TIMEFRAME = "5m"
+
+DEFAULT_TIMEZONE = "Asia/Kolkata"
+
+APP_NAME = "OGS Smart Money AI"
+
+COMPANY = "Om Ganapati Solution"
+
+CODENAME = "GARUDA"

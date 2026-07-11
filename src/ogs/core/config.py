@@ -5,7 +5,7 @@ Module:
     config.py
 
 Purpose:
-    Central configuration manager for OGS.
+    Central application configuration.
 
 Author:
     Om Ganapati Solution
@@ -16,25 +16,28 @@ Project:
 ===========================================================
 """
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+
+from ogs.core.version import VERSION
 
 
 @dataclass(slots=True)
 class AppConfig:
     """
     Global application configuration.
-
-    This class stores all configurable settings
-    used throughout the application.
     """
 
     app_name: str = "OGS Smart Money AI"
 
     company: str = "Om Ganapati Solution"
 
-    version: str = "0.0.1"
-
     codename: str = "GARUDA"
+
+    version: str = field(default_factory=lambda: VERSION.full)
+
+    debug: bool = True
+
+    log_level: str = "INFO"
 
     theme: str = "Dark"
 
@@ -44,9 +47,5 @@ class AppConfig:
 
     default_timeframe: str = "5m"
 
-    log_level: str = "INFO"
 
-    debug_mode: bool = True
-
-
-config = AppConfig()
+CONFIG = AppConfig()

@@ -1,27 +1,29 @@
 """
+===========================================================
+
 OGS Smart Money AI
+
 Application Entry Point
+
+Author:
+    Om Ganapati Solution
+
+===========================================================
 """
 
-from ogs.core.config import config
-from ogs.core.logger import configure_logger, get_logger
+from ogs.core.application import Application
 
 
 def main() -> None:
-    configure_logger()
+    """
+    OGS Entry Point.
+    """
 
-    log = get_logger()
+    application = Application()
 
-    log.info("Starting OGS Smart Money AI")
+    application.run()
 
-    print("=" * 60)
-    print(config.app_name)
-    print(config.company)
-    print(f"Version : {config.version}")
-    print(f"Codename: {config.codename}")
-    print("=" * 60)
-
-    log.success("OGS Started Successfully")
+    application.shutdown()
 
 
 if __name__ == "__main__":

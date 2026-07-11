@@ -1,27 +1,17 @@
 """
-===========================================================
-
-Module:
-    logger.py
-
-Purpose:
-    Central logging system for OGS.
-
-===========================================================
+Central Logger
 """
 
 from __future__ import annotations
 
 import sys
+
 from loguru import logger
 
-from ogs.core.constants import LOG_DIR, LOG_FILE
+from ogs.core.constants import LOG_FILE, LOG_DIR
 
 
 def configure_logger() -> None:
-    """
-    Configure the global application logger.
-    """
 
     LOG_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -31,25 +21,16 @@ def configure_logger() -> None:
         sys.stdout,
         level="INFO",
         colorize=True,
-        enqueue=True,
-        backtrace=True,
-        diagnose=True,
     )
 
     logger.add(
         LOG_FILE,
+        level="DEBUG",
         rotation="10 MB",
         retention="30 days",
         compression="zip",
-        level="DEBUG",
-        enqueue=True,
-        backtrace=True,
-        diagnose=True,
     )
 
 
 def get_logger():
-    """
-    Return the configured logger instance.
-    """
     return logger
