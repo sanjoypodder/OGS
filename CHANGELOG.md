@@ -38,3 +38,15 @@ All notable changes to OGS Smart Money AI will be documented in this file.
 
 Foundation Started
 
+## [0.1.0-alpha.2]
+
+### Added
+
+- Central logging framework
+- Automatic log file creation
+- Rotating log files
+- Custom OGS exception hierarchy
+
+### Improved
+
+- Configuration now uses constants as the single source of truth.

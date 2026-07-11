@@ -18,6 +18,14 @@ Project:
 
 from dataclasses import dataclass, field
 
+from ogs.core.constants import (
+    APP_NAME,
+    CODENAME,
+    COMPANY,
+    DEFAULT_SYMBOL,
+    DEFAULT_TIMEFRAME,
+    DEFAULT_TIMEZONE,
+)
 from ogs.core.version import VERSION
 
 
@@ -27,11 +35,11 @@ class AppConfig:
     Global application configuration.
     """
 
-    app_name: str = "OGS Smart Money AI"
+    app_name: str = APP_NAME
 
-    company: str = "Om Ganapati Solution"
+    company: str = COMPANY
 
-    codename: str = "GARUDA"
+    codename: str = CODENAME
 
     version: str = field(default_factory=lambda: VERSION.full)
 
@@ -41,11 +49,11 @@ class AppConfig:
 
     theme: str = "Dark"
 
-    timezone: str = "Asia/Kolkata"
+    timezone: str = DEFAULT_TIMEZONE
 
-    default_symbol: str = "XAUUSD"
+    default_symbol: str = DEFAULT_SYMBOL
 
-    default_timeframe: str = "5m"
+    default_timeframe: str = DEFAULT_TIMEFRAME
 
 
 CONFIG = AppConfig()

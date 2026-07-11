@@ -1,5 +1,16 @@
 """
-Central Logger
+===========================================================
+
+Module:
+    logger.py
+
+Purpose:
+    Central logging system for OGS Smart Money AI.
+
+Author:
+    Om Ganapati Solution
+
+===========================================================
 """
 
 from __future__ import annotations
@@ -8,10 +19,23 @@ import sys
 
 from loguru import logger
 
-from ogs.core.constants import LOG_FILE, LOG_DIR
+from ogs.core.constants import LOG_DIR, LOG_FILE
+
+
+_CONFIGURED = False
 
 
 def configure_logger() -> None:
+    """
+    Configure the global application logger.
+
+    Safe to call multiple times.
+    """
+
+    global _CONFIGURED
+
+    if _CONFIGURED:
+        return
 
     LOG_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -21,6 +45,9 @@ def configure_logger() -> None:
         sys.stdout,
         level="INFO",
         colorize=True,
+        enqueue=True,
+        backtrace=True,
+        diagnose=True,
     )
 
     logger.add(
@@ -29,8 +56,20 @@ def configure_logger() -> None:
         rotation="10 MB",
         retention="30 days",
         compression="zip",
+        enqueue=True,
+        backtrace=True,
+        diagnose=True,
     )
+
+    _CONFIGURED = True
 
 
 def get_logger():
+    """
+    Return the global logger instance.
+    """
+
+    if not _CONFIGURED:
+        configure_logger()
+
     return logger
