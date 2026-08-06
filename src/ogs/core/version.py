@@ -37,10 +37,7 @@ class Version:
     @property
     def full(self) -> str:
         """Return complete version string."""
-        return (
-            f"{self.major}.{self.minor}.{self.patch}-"
-            f"{self.stage}.{self.build}"
-        )
+        return f"{self.major}.{self.minor}.{self.patch}-{self.stage}.{self.build}"
 
 
 VERSION = Version()

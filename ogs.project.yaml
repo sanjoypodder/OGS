@@ -1,0 +1,35 @@
+﻿# ==============================================================================
+# OGS Financial Operating System
+# Project Manifest
+# ==============================================================================
+
+project:
+  name: OGS Financial Operating System
+  short_name: OGS-FOS
+  codename: GARUDA
+  version: 0.0.1
+  organization: Om Ganapati Solution
+
+paths:
+  source: src/ogs
+  tests: tests
+  docs: docs
+  devtools: devtools
+
+toolkit:
+  version: 1.0.0
+
+  definition_directory: devtools/templates/definitions
+
+  asset_directory: devtools/templates/assets
+
+development:
+  formatter: black
+  linter: ruff
+  test_framework: pytest
+
+generator:
+  overwrite_existing: false
+  create_readme: true
+  create_tests: true
+  create_init: true

@@ -1,0 +1,18 @@
+version: 1.0
+
+name: Market Engine
+
+description: Market Intelligence Engine.
+
+directories:
+  - src/ogs/engine/intelligence
+  - src/ogs/engine/intelligence/market_engine
+
+files:
+  - destination: src/ogs/engine/intelligence/__init__.py
+
+  - destination: src/ogs/engine/intelligence/market_engine/__init__.py
+
+  - destination: src/ogs/engine/intelligence/market_engine/market_engine.py
+
+  - destination: tests/engine/intelligence/test_market_engine.py

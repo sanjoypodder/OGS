@@ -1,0 +1,45 @@
+﻿version: "1.0.0"
+
+name: "Engine Framework"
+
+description: >
+  Shared Engine Framework for OGS Financial Operating System (OGS-FOS).
+
+directories:
+  - src/ogs/engine/base
+  - tests/engine/base
+
+files:
+
+  - source: engine/engine_init.py.tpl
+    destination: src/ogs/engine/__init__.py
+
+  - source: engine/base_init.py.tpl
+    destination: src/ogs/engine/base/__init__.py  
+
+  - source: engine/base_engine.py.tpl
+    destination: src/ogs/engine/base/base_engine.py
+
+  - source: engine/engine_context.py.tpl
+    destination: src/ogs/engine/base/engine_context.py
+
+  - source: engine/engine_result.py.tpl
+    destination: src/ogs/engine/base/engine_result.py
+
+  - source: engine/engine_registry.py.tpl
+    destination: src/ogs/engine/base/engine_registry.py
+
+  - source: engine/exceptions.py.tpl
+    destination: src/ogs/engine/base/exceptions.py
+
+  - source: engine/test_base_engine.py.tpl
+    destination: tests/engine/base/test_base_engine.py
+
+  - source: engine/test_engine_context.py.tpl
+    destination: tests/engine/base/test_engine_context.py
+
+  - source: engine/test_engine_result.py.tpl
+    destination: tests/engine/base/test_engine_result.py
+
+  - source: engine/test_engine_registry.py.tpl
+    destination: tests/engine/base/test_engine_registry.py

@@ -69,3 +69,65 @@ Foundation Started
 - Application lifecycle model
 - Service container
 - Shutdown manager
+## [0.1.0-alpha]
+
+### Completed
+
+- Application Kernel
+- Startup Manager
+- Shutdown Manager
+- Environment Manager
+- Service Container
+- Kernel Lifecycle
+## [0.2.0-alpha]
+
+### Added
+
+- Market domain package
+- AssetClass enum
+- Symbol enum
+- Symbol classification properties
+
+## [0.2.0-alpha]
+
+### Added
+
+- Timeframe domain model
+- Timeframe hierarchy
+- Timeframe helper properties
+
+## [0.2.0-alpha]
+
+### Added
+
+- TradingSession domain model
+- UTC session boundaries
+- Session metadata
+- ### Added
+
+- Duplicate domain object
+- DuplicateDetector
+- Duplicate candle detection by timestamp
+### Added
+
+- TimezoneNormalizer
+- UTC normalization for CandleSeries
+- Immutable timezone conversion
+### Added
+
+- Swing domain object
+- Swing price abstraction
+- Swing timestamp helper
+
+### Added
+
+- SwingDetector
+- Bill Williams 5-candle fractal algorithm
+- Swing High detection
+- Swing Low detection
+
+
+### Added
+
+- SwingValidator
+- Validation for Swing domain objects

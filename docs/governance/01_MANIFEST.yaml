@@ -1,0 +1,225 @@
+# ==========================================================
+# OGS SMART MONEY AI
+# PROJECT MANIFEST
+# Single Source of Truth (SSOT)
+# ==========================================================
+
+project:
+
+  name: OGS Smart Money AI
+  codename: GARUDA
+
+  version: 0.0.1
+  architecture: 1.0
+  documentation: 1.0
+
+  status: ACTIVE_DEVELOPMENT
+
+  sprint: 4
+
+  current_module:
+  current_task:
+
+  current_branch: main
+
+  python: 3.14.5
+
+# ==========================================================
+# MODULE STATUS
+# ==========================================================
+
+modules:
+
+  foundation:
+
+    status: COMPLETE
+
+    packages:
+
+      configuration: COMPLETE
+      constants: COMPLETE
+      version: COMPLETE
+      logging: COMPLETE
+      environment: COMPLETE
+      application: COMPLETE
+      service_container: COMPLETE
+      startup: COMPLETE
+      shutdown: COMPLETE
+
+  market:
+
+    status: COMPLETE
+
+    packages:
+
+      symbol: COMPLETE
+      symbol_registry: COMPLETE
+      timeframe: COMPLETE
+      trading_session: COMPLETE
+      price: COMPLETE
+      candle: COMPLETE
+      candle_series: COMPLETE
+      validators: COMPLETE
+      timezone: COMPLETE
+      duplicate_detection: COMPLETE
+      gap_detection: COMPLETE
+
+  smart_money:
+
+    swing:
+
+      status: COMPLETE
+
+    bos:
+
+      status: COMPLETE
+
+    choch:
+
+      status: COMPLETE
+
+    order_block:
+
+      status: COMPLETE
+
+    liquidity:
+
+      status: COMPLETE
+
+      submodules:
+
+        equal_highs: COMPLETE
+        equal_lows: COMPLETE
+        buy_side: COMPLETE
+        sell_side: COMPLETE
+        sweep: COMPLETE
+        void: COMPLETE
+
+    mitigation:
+
+      status: COMPLETE
+
+    breaker:
+
+      status: COMPLETE
+
+    fair_value_gap:
+
+      status: PLANNED
+
+    premium_discount:
+
+      status: PLANNED
+
+    dealing_range:
+
+      status: PLANNED
+
+    ote:
+
+      status: PLANNED
+
+    market_narrative:
+
+      status: PLANNED
+
+  engines:
+
+    market_structure:
+
+      status: COMPLETE
+
+    liquidity:
+
+      status: COMPLETE
+
+    smart_money:
+
+      status: COMPLETE
+
+    strategy:
+
+      status: PLANNED
+
+    execution:
+
+      status: PLANNED
+
+    risk:
+
+      status: PLANNED
+
+    ai:
+
+      status: PLANNED
+
+# ==========================================================
+# DOCUMENTATION
+# ==========================================================
+
+documentation:
+
+  overview: COMPLETE
+  architecture: COMPLETE
+  developer_guide: COMPLETE
+  testing_guide: COMPLETE
+  smart_money_modules: COMPLETE
+  adr: COMPLETE
+  governance: IN_PROGRESS
+
+# ==========================================================
+# TESTING
+# ==========================================================
+
+testing:
+
+  unit_tests:
+
+    status: ACTIVE
+
+  integration_tests:
+
+    status: ACTIVE
+
+  performance_tests:
+
+    status: PLANNED
+
+# ==========================================================
+# ROADMAP
+# ==========================================================
+
+roadmap:
+
+  current:
+
+    -
+
+  next:
+
+    -
+
+  backlog:
+
+    -
+
+# ==========================================================
+# PROJECT HEALTH
+# ==========================================================
+
+health:
+
+  architecture: GOOD
+  documentation: GOOD
+  testing: GOOD
+  maintainability: GOOD
+  technical_debt: LOW
+
+# ==========================================================
+# LAST UPDATE
+# ==========================================================
+
+last_updated:
+
+updated_by:
+reason:

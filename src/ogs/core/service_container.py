@@ -43,9 +43,7 @@ class ServiceContainer:
         """
 
         if name in self._services:
-            raise KeyError(
-                f"Service '{name}' is already registered."
-            )
+            raise KeyError(f"Service '{name}' is already registered.")
 
         self._services[name] = service
 
@@ -63,9 +61,7 @@ class ServiceContainer:
             return self._services[name]
 
         except KeyError as ex:
-            raise KeyError(
-                f"Service '{name}' is not registered."
-            ) from ex
+            raise KeyError(f"Service '{name}' is not registered.") from ex
 
     def has(self, name: str) -> bool:
         """
@@ -85,9 +81,7 @@ class ServiceContainer:
         """
 
         if name not in self._services:
-            raise KeyError(
-                f"Service '{name}' is not registered."
-            )
+            raise KeyError(f"Service '{name}' is not registered.")
 
         del self._services[name]
 

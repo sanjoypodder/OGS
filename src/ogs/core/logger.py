@@ -21,7 +21,6 @@ from loguru import logger
 
 from ogs.core.constants import LOG_DIR, LOG_FILE
 
-
 _CONFIGURED = False
 
 

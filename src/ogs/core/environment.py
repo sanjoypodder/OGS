@@ -85,10 +85,8 @@ class EnvironmentManager:
     def _check_python(self) -> None:
 
         if sys.version_info < self.MINIMUM_PYTHON:
-
             raise EnvironmentError(
-                f"Python {self.MINIMUM_PYTHON[0]}.{self.MINIMUM_PYTHON[1]} "
-                f"or higher is required."
+                f"Python {self.MINIMUM_PYTHON[0]}.{self.MINIMUM_PYTHON[1]} or higher is required."
             )
 
         self.logger.info(f"Python : {platform.python_version()}")
@@ -96,7 +94,6 @@ class EnvironmentManager:
     def _check_project(self) -> None:
 
         if not PROJECT_ROOT.exists():
-
             raise EnvironmentError("Project root not found.")
 
         self.logger.info(f"Project : {PROJECT_ROOT}")
@@ -104,7 +101,6 @@ class EnvironmentManager:
     def _check_directories(self) -> None:
 
         for directory in self.REQUIRED_DIRECTORIES:
-
             directory.mkdir(parents=True, exist_ok=True)
 
             self.logger.info(f"Directory OK : {directory.name}")
@@ -112,50 +108,34 @@ class EnvironmentManager:
     def _check_packages(self) -> None:
 
         for package in self.REQUIRED_PACKAGES:
-
             try:
-
                 importlib.import_module(package)
 
                 self.logger.info(f"Package OK : {package}")
 
             except ModuleNotFoundError as ex:
-
-                raise EnvironmentError(
-                    f"Missing package: {package}"
-                ) from ex
+                raise EnvironmentError(f"Missing package: {package}") from ex
 
     def _check_permissions(self) -> None:
 
         test_file = LOG_DIR / ".permission"
 
         try:
-
             test_file.write_text("ogs")
 
             test_file.unlink()
 
         except Exception as ex:
-
-            raise EnvironmentError(
-                "Write permission failed."
-            ) from ex
+            raise EnvironmentError("Write permission failed.") from ex
 
         self.logger.info("Write Permission : OK")
 
     def _check_virtual_environment(self) -> None:
 
-        in_venv = (
-            hasattr(sys, "real_prefix")
-            or sys.prefix != sys.base_prefix
-        )
+        in_venv = hasattr(sys, "real_prefix") or sys.prefix != sys.base_prefix
 
         if in_venv:
-
             self.logger.info("Virtual Environment : Active")
 
         else:
-
-            self.logger.warning(
-                "Virtual Environment : Not Active"
-            )
+            self.logger.warning("Virtual Environment : Not Active")
