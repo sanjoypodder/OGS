@@ -1,14 +1,12 @@
 """
-===========================================================
-
 OGS Smart Money AI
 
 Currency Factory
-
-===========================================================
 """
 
 from __future__ import annotations
+
+from copy import deepcopy
 
 from .domain import Currency
 from .enums import (
@@ -31,7 +29,7 @@ class CurrencyFactory:
         currency_code: str,
         numeric_code: int,
         name: str,
-        currency_type: CurrencyType,
+        currency_type: CurrencyType = CurrencyType.UNKNOWN,
         status: CurrencyStatus = CurrencyStatus.ACTIVE,
         minor_unit: int = 2,
         exchange_rate: float = 1.0,
@@ -63,9 +61,7 @@ class CurrencyFactory:
         minor_unit: int = 2,
         exchange_rate: float = 1.0,
     ) -> Currency:
-        """
-        Create an active fiat currency.
-        """
+        """Create an active fiat currency."""
 
         return cls.create(
             currency_code=currency_code,
@@ -86,9 +82,7 @@ class CurrencyFactory:
         minor_unit: int = 8,
         exchange_rate: float = 1.0,
     ) -> Currency:
-        """
-        Create an active cryptocurrency.
-        """
+        """Create an active cryptocurrency."""
 
         return cls.create(
             currency_code=currency_code,
@@ -109,9 +103,7 @@ class CurrencyFactory:
         minor_unit: int = 2,
         exchange_rate: float = 1.0,
     ) -> Currency:
-        """
-        Create an active digital currency.
-        """
+        """Create an active digital currency."""
 
         return cls.create(
             currency_code=currency_code,
@@ -132,9 +124,7 @@ class CurrencyFactory:
         minor_unit: int = 2,
         exchange_rate: float = 1.0,
     ) -> Currency:
-        """
-        Create an active commodity-backed currency.
-        """
+        """Create an active commodity-backed currency."""
 
         return cls.create(
             currency_code=currency_code,
@@ -145,3 +135,16 @@ class CurrencyFactory:
             minor_unit=minor_unit,
             exchange_rate=exchange_rate,
         )
+
+    @staticmethod
+    def clone(currency: Currency) -> Currency:
+        """
+        Create an independent copy of a Currency.
+        """
+
+        if not isinstance(currency, Currency):
+            raise TypeError(
+                "currency must be a Currency instance"
+            )
+
+        return deepcopy(currency)
